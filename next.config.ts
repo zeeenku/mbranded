@@ -1,8 +1,10 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from "next"
+import "@/config/env";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "standalone",
   reactCompiler: true,
-};
-
-export default nextConfig;
+  transpilePackages: ["@t3-oss/env-nextjs", "@t3-oss/env-core"],
+}
+ 
+export default nextConfig
