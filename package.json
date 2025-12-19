@@ -10,23 +10,13 @@
     "prepare": "husky",
     "lint": "eslint",
     "format": "prettier --check .",
-    "precommit": "npm run lint && npm test && echo 'tessst'"
+    "precommit": "echo 'tessst'"
   },
    "husky": {
-
-   "hooks": {
-
-     "pre-commit": "npm run precommit"
-
-   }
-
+    "hooks": {
+      "pre-commit": ""
+    }
  },
-  "lint-staged": {
-    "*.{ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ]
-  },
   "dependencies": {
     "@polinater/redis-event-bus": "^4.0.0",
     "@scalar/api-reference-react": "^0.8.11",

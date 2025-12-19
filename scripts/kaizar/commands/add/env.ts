@@ -13,7 +13,7 @@ import {
   addVarToEnvFile,
   addVarToT3Env,
   normalizeEnvFileSpacing,
-} from '../lib/utils';
+} from '../../lib/utils';
 
 export function registerAddEnvCommand(command: Command) {
   command

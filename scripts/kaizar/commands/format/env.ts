@@ -1,7 +1,7 @@
 import { Command } from 'commander';
 import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { join } from 'path';
-import { getAllEnvFiles, normalizeEnvFileSpacing } from '../lib/utils';
+import { getAllEnvFiles, normalizeEnvFileSpacing } from '../../lib/utils';
 
 export function registerFormatEnvCommand(command: Command) {
   command

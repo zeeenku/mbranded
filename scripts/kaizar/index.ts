@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { Command } from 'commander';
-import { registerAddEnvCommand } from './add/env';
-import { registerFormatEnvCommand } from './format/env';
+import { registerAddEnvCommand } from './commands/add/env';
+import { registerFormatEnvCommand } from './commands/format/env';
 
 const command = new Command();
 
