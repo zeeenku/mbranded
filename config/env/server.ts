@@ -3,7 +3,7 @@ import { z } from "zod";
  
 export const serverEnv = createEnv({
   server: {
-    DATABASE_URL: z.url(),
+    DATABASE_URI: z.url(),
     AI_GROK_API_KEY: z.string().min(1),
   
     OPEN_AI_API_KEY: z.string().min(1),

@@ -3,7 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"pnpm run route-watcher\" \"next dev\" --names \"routes,next\" --prefix-colors \"blue,green\" --kill-others",
+    "dev:next": "next dev",
+    "dev:watch": "concurrently \"pnpm run page-watcher\" \"pnpm run dev:next\" --names \"watcher,next\" --prefix-colors \"cyan,green\"",
+    "route-watcher": "tsx scripts/route-watcher.ts",
+    "page-watcher": "tsx scripts/page-watcher.ts",
+    "generate:routes": "tsx scripts/generate-routes.ts",
     "build": "next build",
     "start": "next start",
     "cli": "tsx scripts/kaizar/index.ts",
@@ -12,11 +17,11 @@
     "format": "prettier --check .",
     "precommit": "echo 'tessst'"
   },
-   "husky": {
+  "husky": {
     "hooks": {
       "pre-commit": ""
     }
- },
+  },
   "dependencies": {
     "@polinater/redis-event-bus": "^4.0.0",
     "@scalar/api-reference-react": "^0.8.11",
@@ -24,7 +29,7 @@
     "@t3-oss/env-nextjs": "^0.13.10",
     "@trpc/client": "^11.8.0",
     "@trpc/next": "^11.8.0",
-    "@trpc/react": "^9.27.4",
+    "@trpc/react-query": "^11.8.0",
     "@trpc/server": "^11.8.0",
     "ajv": "^8.17.1",
     "commander": "^14.0.2",
@@ -51,6 +56,8 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "babel-plugin-react-compiler": "1.0.0",
+    "chokidar": "^5.0.0",
+    "concurrently": "^9.2.1",
     "drizzle-kit": "^0.31.8",
     "eslint": "^9",
     "eslint-config-next": "16.0.10",
