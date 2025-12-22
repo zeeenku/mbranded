@@ -131,3 +131,4 @@ export default page;
 
 - Remember to manually update `route-types.ts` to add the new route to the `RoutePath` type union and `RouteSearchParams` for full type safety with `TypedLink`
 
+
